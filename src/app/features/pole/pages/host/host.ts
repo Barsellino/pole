@@ -89,7 +89,6 @@ export class Host implements OnInit, OnDestroy {
     this.gs.passOrWrong();
   }
 
-  togglePlayer() { this.gs.startTurn(this.activePlayer === 'A' ? 'B' : 'A'); }
   setTopicName(name: string) {
     const topic = { ...(this.topic ?? { id: 'custom', imageUrl: '' }), name };
     this.gs.setTopic(topic);
