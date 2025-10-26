@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "roundDurationSec": 60
+  },
+  "topics": [
+    {
+      "id": "nature-1",
+      "name": "Природа",
+      "imageUrl": "assets/images/nature-1.jpg"
+    },
+    {
+      "id": "city-1",
+      "name": "Місто",
+      "imageUrl": "assets/images/city-1.png"
+    },
+    {
+      "id": "sport-1",
+      "name": "Спорт",
+      "imageUrl": "assets/images/sport-1.jpg"
+    }
+  ]
+}
