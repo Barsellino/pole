@@ -1,0 +1,65 @@
+<div class="host">
+  <header class="top">
+    <h1>Поле — Host</h1>
+    <div class="controls">
+      <label>
+        Час на гравця:
+        <input type="number" min="5" [value]="perPlayerSec" (change)="setPerPlayerTime($any($event).target.value)" /> c
+      </label>
+      <button (click)="resetTimes()">Скинути часи</button>
+      <button (click)="openDisplay()">Відкрити Display</button>
+    </div>
+  </header>
+
+  <!-- компактне прев’ю того, що бачать гравці -->
+  <section class="display-preview" *ngIf="currentImageSrc || currentImageAlt">
+    <div class="display-preview__title" *ngIf="currentImageAlt">{{ currentImageAlt }}</div>
+    <div class="display-preview__stage" [class.placeholder]="!currentImageSrc">
+      <img *ngIf="currentImageSrc as img" [src]="img" [alt]="currentImageAlt || 'Кадр теми'" />
+    </div>
+  </section>
+
+  <section class="stage">
+    <div class="players">
+      <div class="player" [class.active]="activePlayer === 'A'">
+        <div class="label">A</div>
+        <div class="time">{{ timeA }}s</div>
+        <div class="turn">
+          <button (click)="startTurn('A')">Старт A</button>
+        </div>
+      </div>
+      <!-- ... existing code ... -->
+      <div class="center-controls">
+        <div class="status">
+          <span>Хід: {{ activePlayer }}</span>
+          <span class="dot" [class.blink]="running"></span>
+        </div>
+        <div class="actions">
+          <button (click)="pauseAll()">Пауза</button>
+          <button (click)="correct()">Правильно (перехід)</button>
+          <button (click)="passOrWrong()">Пас/Хибно</button>
+          <button (click)="togglePlayer()">↔ Змінити хід</button>
+        </div>
+      </div>
+      <!-- ... existing code ... -->
+      <div class="player" [class.active]="activePlayer === 'B'">
+        <div class="label">B</div>
+        <div class="time">{{ timeB }}s</div>
+        <div class="turn">
+          <button (click)="startTurn('B')">Старт B</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topics-list" *ngIf="topics.length">
+    <h3>Теми з assets:</h3>
+    <div class="grid">
+      <button class="topic-item" *ngFor="let t of topics" (click)="chooseTopic(t)">{{ t.name }}</button>
+    </div>
+  </section>
+
+  <footer class="hint">
+    Гарячі клавіші: 1 — старт A, 2 — старт B, C — правильно, P — пауза, X — пас/хибно, ←/→ — змінити хід
+  </footer>
+</div>

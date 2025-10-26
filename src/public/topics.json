@@ -1,22 +1,14 @@
 {
-  "settings": {
-    "roundDurationSec": 60
-  },
+  "settings": { "perPlayerSec": 60 },
   "topics": [
     {
       "id": "nature-1",
       "name": "Природа",
-      "imageUrl": "assets/images/nature-1.jpg"
-    },
-    {
-      "id": "city-1",
-      "name": "Місто",
-      "imageUrl": "assets/images/city-1.png"
-    },
-    {
-      "id": "sport-1",
-      "name": "Спорт",
-      "imageUrl": "assets/images/sport-1.jpg"
+      "images": [
+        { "src": "assets/images/nature-1-a.jpg", "alt": "Природа — кадр A" },
+        { "src": "assets/images/nature-1-b.jpg", "alt": "Природа — кадр B" },
+        { "src": "assets/images/nature-1-c.jpg", "alt": "Природа — кадр C" }
+      ]
     }
   ]
 }

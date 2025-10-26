@@ -1,0 +1,145 @@
+/* Повна темна тема без скролу: все вміщується по висоті та ширині */
+:host {
+  display: block;
+  height: 100vh; /* враховує моб. браузерні панелі */
+  background: #0e0f12;
+  color: #e9ecf1;
+  overflow: hidden; /* прибираємо вертикальний скрол */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+}
+
+/* Три зони: заголовок, сцена (еластична), панель статусу */
+.display {
+  height: 94%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(8px, 2vw, 16px);
+  padding: clamp(8px, 2vw, 16px);
+  overflow: hidden; /* на випадок внутрішніх переповнень */
+}
+
+/* Заголовок */
+.topic__title {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+  font-size: clamp(18px, 3vw, 32px);
+  line-height: 1.2;
+}
+
+.topic__title.muted { opacity: 0.6; font-weight: 500; }
+
+/* Сцена із зображенням: еластичний контейнер без спотворень, без розтягування */
+.stage {
+  min-height: 0; /* дозволяє сцені стискатися всередині гріда */
+  display: grid;
+  place-items: center;
+  background: #101319;
+  border-radius: 12px;
+  overflow: hidden; /* обрізаємо виступи */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Плейсхолдер */
+.stage.placeholder::after {
+  content: "Немає зображення теми";
+  color: #8a93a6;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+/* Картинка: вписати, не спотворювати, не створювати скрол */
+.stage img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #0e0f12;
+  display: block;
+}
+
+/* Нижня панель (HUD) */
+.hud {
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(8px, 2vw, 16px);
+  width: min(1200px, 100%);
+  min-height: 0;
+}
+
+.player {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: clamp(8px, 2vw, 12px);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2vw, 14px);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.player.active {
+  outline: 2px solid #4f8cff;
+  background: rgba(79, 140, 255, 0.08);
+}
+
+.player .label {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.player .time {
+  font-size: clamp(18px, 4vw, 36px);
+  font-weight: 800;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2vw, 16px);
+  border-radius: 999px;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.status .result b { font-size: clamp(14px, 2.2vw, 20px); }
+
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #8a93a6;
+  box-shadow: 0 0 10px rgba(138, 147, 166, 0.6);
+}
+
+.dot.blink {
+  animation: blink 1s infinite;
+  background: #4f8cff;
+  box-shadow: 0 0 14px rgba(79, 140, 255, 0.9);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+/* Маленькі екрани: зменшуємо відступи й розміри, уникаємо скролу */
+@media (max-width: 600px) {
+  .display { padding: 8px; gap: 8px; }
+  .players { gap: 8px; }
+}

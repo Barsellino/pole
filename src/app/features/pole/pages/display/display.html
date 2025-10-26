@@ -1,0 +1,39 @@
+<div class="display">
+  <div class="topic" *ngIf="topic; else noTopic">
+    <h1 class="topic__title">{{ topic?.name }}</h1>
+  </div>
+  <ng-template #noTopic>
+    <h1 class="topic__title muted">Оберіть тему на екрані ведучого</h1>
+  </ng-template>
+
+  <div class="stage" [class.placeholder]="!currentImageSrc">
+    <img *ngIf="currentImageSrc as img" [src]="img" [alt]="currentImageAlt" />
+  </div>
+
+  <div class="hud">
+    <div class="players">
+      <div class="player" [class.active]="activePlayer === 'A'">
+        <span class="label">A</span>
+        <span class="time">{{ timeA }}s</span>
+      </div>
+
+      <div class="status" [class.ended]="timeA === 0 || timeB === 0">
+        <ng-container *ngIf="timeA === 0 || timeB === 0; else turnInfo">
+          <span class="result">
+            Переможець:
+            <b>{{ timeA === 0 && timeB > 0 ? 'B' : timeB === 0 && timeA > 0 ? 'A' : 'Нічия' }}</b>
+          </span>
+        </ng-container>
+        <ng-template #turnInfo>
+          <span>Хід: {{ activePlayer }}</span>
+          <span class="dot" [class.blink]="running"></span>
+        </ng-template>
+      </div>
+
+      <div class="player" [class.active]="activePlayer === 'B'">
+        <span class="label">B</span>
+        <span class="time">{{ timeB }}s</span>
+      </div>
+    </div>
+  </div>
+</div>
