@@ -223,7 +223,7 @@
 .display-preview__stage {
   display: grid;
   place-items: center;
-  height: 220px;
+  height: 300px;
   background: #101319;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.06);
@@ -242,4 +242,8 @@
   object-fit: contain;
   display: block;
   background: #0e0f12;
+}
+
+.photo-host {
+  height: 300px;
 }

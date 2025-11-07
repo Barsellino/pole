@@ -15,7 +15,7 @@
   <section class="display-preview" *ngIf="currentImageSrc || currentImageAlt">
     <div class="display-preview__title" *ngIf="currentImageAlt">{{ currentImageAlt }}</div>
     <div class="display-preview__stage" [class.placeholder]="!currentImageSrc">
-      <img *ngIf="currentImageSrc as img" [src]="img" [alt]="currentImageAlt || 'Кадр теми'" />
+      <img class="photo-host" *ngIf="currentImageSrc as img" [src]="img" [alt]="currentImageAlt || 'Кадр теми'" />
     </div>
   </section>
 

@@ -1,6 +1,6 @@
 <div class="display">
   <div class="topic" *ngIf="topic; else noTopic">
-    <h1 class="topic__title">{{ topic?.name }}</h1>
+    <h1 class="topic__title">{{ topic.name }}</h1>
   </div>
   <ng-template #noTopic>
     <h1 class="topic__title muted">Оберіть тему на екрані ведучого</h1>
