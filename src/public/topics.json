@@ -203,8 +203,9 @@
     },
     {
       "id": "dog-breeds-top-60",
-      "name": "Породи собак — популярні (60)",
+      "name": "Породи собак — популярні",
       "images": [
+        { "src": "123123", "alt": "cj,frb" },
         { "src": "https://upload.wikimedia.org/wikipedia/commons/3/34/Labrador_on_Quantock_%282175262184%29.jpg", "alt": "Лабрадор ретривер" },
         { "src": "https://www.healthypawspetinsurance.com/blog/wp-content/uploads/2022/09/german-shepherd-dog-standing-in-the-woods.jpg", "alt": "Німецька вівчарка" },
         { "src": "https://eatneobites.com/cdn/shop/articles/Golden_Retriever_-_Skin_Coat.jpg?v=1713106749", "alt": "Золотистий ретривер" },
@@ -276,6 +277,7 @@
       "id": "ukrainian-music-top-60",
       "name": "Українські музичні гурти та виконавці",
       "images": [
+        { "src": "234234", "alt": "Jerry Heil" },
         { "src": "https://newsukraine.rbc.ua/static/img/_/d/_dlya_novin___2025_05_16t155156_033_7419ffb4c14ea9d2d335d84747af0257_1300x820_10c5029cf051533e9ef209f30c4a8ac8_1300x820.jpg", "alt": "Jerry Heil" },
         { "src": "https://thateurovisionsite.com/wp-content/uploads/kalush-ukraine-ebu.jpg", "alt": "Kalush Orchestra" },
         { "src": "https://yt3.googleusercontent.com/SiIAWwVUsKYzA7uANRbjBTEfU81xUi6w6jqBjp_W4mIkwNOkCUJzNyV8NrPj3l_pp1BOHlz8EQ%3Ds900-c-k-c0x00ffffff-no-rj", "alt": "Шугар" },
@@ -329,6 +331,7 @@
       "id": "disney-characters-top-60",
       "name": "Персонажі Disney",
       "images": [
+        { "src": "234234234", "alt": "Персонажі Disney" },
         { "src": "https://ipo.blog.gov.uk/wp-content/uploads/sites/124/2024/03/OIP.jpg", "alt": "Міккі Маус" },
         { "src": "https://i.ytimg.com/vi/sWjqDX3ue7I/hq720.jpg?rs=AOn4CLAKo1JGNLCKVQVIbU2LCwTfYgn3OQ&sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD", "alt": "Ельза (Крижане серце)" },
         { "src": "https://images.openai.com/static-rsc-1/fRAcHZvLOqdA-mni2m8N9DzfV5N3GfGcGrtI0fUg_b83bSr2-bWTZ3JiHT73CF5REk4PIVYEtOplXJ2v8FDl8klHECksG3ETZt04juBWSFhAUbayn97jfatPyuxuBpgtz_X39iQu0iv5T1TkbA8Q8g", "alt": "Сімба (Король лев)" },
